@@ -1,0 +1,6 @@
+*.mp4
+*.MOV
+*.pptx
+IDEAlab\simulation\pullups\build\Mono
+IDEAlab\simulation\pullups\build\pullups_Data
+*.bin
