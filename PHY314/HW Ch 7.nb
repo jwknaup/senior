@@ -1,0 +1,280 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10887,        272]
+NotebookOptionsPosition[      8810,        237]
+NotebookOutlinePosition[      9152,        252]
+CellTagsIndexPosition[      9109,        249]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"x", "[", 
+   RowBox[{"r_", ",", "\[Phi]_", ",", "\[Theta]_"}], "]"}], ":=", 
+  RowBox[{"r", "*", "cos", 
+   RowBox[{"(", "\[Phi]", ")"}], "*", "sin", 
+   RowBox[{"(", "\[Theta]", ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.750259042635795*^9, 3.750259087177495*^9}, {
+  3.750259777291236*^9, 3.7502598073503633`*^9}, {3.750260226865937*^9, 
+  3.7502602338922462`*^9}, {3.7502602647532125`*^9, 3.750260276622401*^9}},
+ CellLabel->"",ExpressionUUID->"3e99ca2a-899a-41b9-90a5-a52dc80df0b8"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"y", "[", 
+   RowBox[{"r_", ",", "\[Phi]_", ",", "\[Theta]_"}], "]"}], ":=", 
+  RowBox[{"r", "*", "sin", 
+   RowBox[{"(", "\[Phi]", ")"}], "*", "sin", 
+   RowBox[{"(", "\[Theta]", ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.7502590980144653`*^9, 3.750259119335071*^9}, {
+  3.750260285270486*^9, 3.7502602879002895`*^9}},
+ CellLabel->"",ExpressionUUID->"099633e4-ea79-4eda-996e-a03af2ad70c4"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"z", "[", 
+    RowBox[{"r_", ",", "\[Theta]_"}], "]"}], ":=", 
+   RowBox[{"r", "*", "cos", 
+    RowBox[{"(", "\[Theta]", ")"}]}]}], "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.750259121734893*^9, 3.7502591463607492`*^9}, {
+  3.7502602916100273`*^9, 3.750260298239632*^9}},
+ CellLabel->"",ExpressionUUID->"f85eb01f-f01c-4b0e-ba63-402c3c4f901a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"r", "[", 
+   RowBox[{"x_", ",", "y_", ",", "z_"}], "]"}], ":=", 
+  RowBox[{"Sqrt", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"x", "^", "2"}], "+", 
+     RowBox[{"y", "^", "2"}], "+", 
+     RowBox[{"z", "^", "2"}]}], ")"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Phi]", "[", 
+   RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+  RowBox[{"ArcTan", 
+   RowBox[{"(", 
+    RowBox[{"y", "/", "x"}], ")"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Theta]", "[", 
+    RowBox[{"x_", ",", "y_", ",", "z_"}], "]"}], ":=", " ", 
+   RowBox[{"ArcTan", 
+    RowBox[{"(", 
+     RowBox[{"sqrt", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"x", "^", "2"}], "+", 
+         RowBox[{"y", "^", "2"}]}], ")"}], "/", "z"}]}], ")"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.7502603033092904`*^9, 3.750260328745948*^9}, 
+   3.750260598573971*^9, {3.750260779203126*^9, 
+   3.7502608070760927`*^9}},ExpressionUUID->"d3ee414f-db74-4056-9345-\
+c355e6174640"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "$RecursionLimit","reclim2",
+   "\"Recursion depth of \\!\\(\\*RowBox[{\\\"1024\\\"}]\\) exceeded during \
+evaluation of \\!\\(\\*RowBox[{SuperscriptBox[\\\"x\\\", \\\"2\\\"], \
+\\\"+\\\", SuperscriptBox[\\\"y\\\", \\\"2\\\"], \\\"+\\\", SuperscriptBox[\\\
+\"z\\\", \\\"2\\\"]}]\\).\"",2,30,27,30784316764863017534,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.7502607802696395`*^9},
+ CellLabel->
+  "During evaluation of \
+In[30]:=",ExpressionUUID->"49727d3c-3f50-4b2d-81ed-38331e5ff8e8"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "SetDelayed","write",
+   "\"Tag \\!\\(\\*RowBox[{\\\"Hold\\\"}]\\) in \
+\\!\\(\\*RowBox[{\\\"Hold\\\", \\\"[\\\", RowBox[{\\\"r\\\", \\\"[\\\", \
+RowBox[{\\\"x_\\\", \\\",\\\", \\\"y_\\\", \\\",\\\", \\\"z_\\\"}], \
+\\\"]\\\"}], \\\"]\\\"}]\\) is Protected.\"",2,30,28,30784316764863017534,
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.750260780289655*^9},
+ CellLabel->
+  "During evaluation of \
+In[30]:=",ExpressionUUID->"d80ccbab-f7a3-43f8-894f-b066e6464eac"],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{3.750260780289655*^9},
+ CellLabel->"Out[30]=",ExpressionUUID->"9152cfbb-a6b1-4dda-b790-1b07c56e78f8"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "$RecursionLimit","reclim2",
+   "\"Recursion depth of \\!\\(\\*RowBox[{\\\"1024\\\"}]\\) exceeded during \
+evaluation of \\!\\(\\*RowBox[{SuperscriptBox[\\\"x\\\", \\\"2\\\"], \
+\\\"+\\\", SuperscriptBox[\\\"y\\\", \\\"2\\\"], \\\"+\\\", SuperscriptBox[\\\
+\"z\\\", \\\"2\\\"]}]\\).\"",2,31,29,30784316764863017534,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.750260780319636*^9},
+ CellLabel->
+  "During evaluation of \
+In[30]:=",ExpressionUUID->"22fa53a7-b397-4986-b9ea-952bcb776f00"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "SetDelayed","write",
+   "\"Tag \\!\\(\\*RowBox[{\\\"Hold\\\"}]\\) in \
+\\!\\(\\*RowBox[{\\\"Hold\\\", \\\"[\\\", RowBox[{\\\"\[Phi]\\\", \\\"[\\\", \
+RowBox[{\\\"x_\\\", \\\",\\\", \\\"y_\\\"}], \\\"]\\\"}], \\\"]\\\"}]\\) is \
+Protected.\"",2,31,30,30784316764863017534,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.750260780339635*^9},
+ CellLabel->
+  "During evaluation of \
+In[30]:=",ExpressionUUID->"558e43f7-17a4-47f6-8dbd-53cfbdc6d04f"],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{3.750260780339635*^9},
+ CellLabel->"Out[31]=",ExpressionUUID->"1fbb53e5-5a52-4492-8ff8-7c8860071e6f"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "$RecursionLimit","reclim2",
+   "\"Recursion depth of \\!\\(\\*RowBox[{\\\"1024\\\"}]\\) exceeded during \
+evaluation of \\!\\(\\*RowBox[{SuperscriptBox[\\\"x\\\", \\\"2\\\"], \
+\\\"+\\\", SuperscriptBox[\\\"y\\\", \\\"2\\\"], \\\"+\\\", SuperscriptBox[\\\
+\"z\\\", \\\"2\\\"]}]\\).\"",2,32,31,30784316764863017534,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.7502607803496337`*^9},
+ CellLabel->
+  "During evaluation of \
+In[30]:=",ExpressionUUID->"c6cd9080-7dde-47a2-b772-4b4651eebe78"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "SetDelayed","write",
+   "\"Tag \\!\\(\\*RowBox[{\\\"Hold\\\"}]\\) in \
+\\!\\(\\*RowBox[{\\\"Hold\\\", \\\"[\\\", RowBox[{\\\"\[Theta]\\\", \
+\\\"[\\\", RowBox[{\\\"x_\\\", \\\",\\\", \\\"y_\\\", \\\",\\\", \
+\\\"z_\\\"}], \\\"]\\\"}], \\\"]\\\"}]\\) is Protected.\"",2,32,32,
+   30784316764863017534,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.7502607803696327`*^9},
+ CellLabel->
+  "During evaluation of \
+In[30]:=",ExpressionUUID->"09ceabe7-a293-469d-9c21-56d356e5ea13"],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{3.7502607803696327`*^9},
+ CellLabel->"Out[32]=",ExpressionUUID->"d0f20255-4be7-4c07-8617-33f6264c51b5"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"r", "'"}], "[", "x", "]"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.75026050079566*^9, 3.750260506795309*^9}},
+ CellLabel->"",ExpressionUUID->"b41f34cf-c51e-409b-8573-08dcc14dc917"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.7502601147853756`*^9, 3.7502601547910604`*^9}, {
+  3.750260194038537*^9, 3.750260197182103*^9}, {3.7502603341108637`*^9, 
+  3.750260372741843*^9}, {3.7502604183704276`*^9, 3.75026042049035*^9}, {
+  3.750260465811017*^9, 
+  3.7502604932261724`*^9}},ExpressionUUID->"3ce6613b-0a2f-430e-93e5-\
+44767981f7a0"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.750259447488268*^9, 3.750259453196575*^9}, {
+  3.750259504232007*^9, 3.7502596133766947`*^9}, {3.7502596477412896`*^9, 
+  3.750259650610185*^9}, {3.7502597624540567`*^9, 3.7502597653538446`*^9}, {
+  3.7502599178644223`*^9, 3.7502599552111287`*^9}, {3.750259985911605*^9, 
+  3.7502600720646105`*^9}},ExpressionUUID->"16f0c784-f3e6-4ac2-bd43-\
+073fec4cb5be"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Reduce","naqs",
+   "\:f3b5\!\(cos\\\\\\ r\\\\\\ sin\\\\\\ \[Theta]\\\\\\ \[Phi] && r\\\\\\ \
+\*SuperscriptBox[\(sin\), \(2\)]\\\\\\ \[Theta]\\\\\\ \[Phi] && cos\\\\\\ r\\\
+\\\\ \[Theta]\) is not a quantified system of equations and inequalities.\
+\:f3b5",2,12,10,30784316764863017534,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{{3.750259549783386*^9, 3.750259583752792*^9}, {
+   3.7502596148665986`*^9, 3.750259654048561*^9}, 3.7502597668037634`*^9, {
+   3.750260097928176*^9, 
+   3.75026009840339*^9}},ExpressionUUID->"02a34320-931c-4df5-a4c6-\
+50a6f41a4dc6"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.7502599143846235`*^9, 
+  3.7502599144046316`*^9}},ExpressionUUID->"86470e1d-4860-4987-b4f3-\
+227d8cb3d36b"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.7502596347253976`*^9, 
+  3.750259639712191*^9}},ExpressionUUID->"59b90552-32fb-4201-a1fd-\
+3f7c3a2e5bb6"]
+},
+WindowSize->{759, 833},
+WindowMargins->{{-3, Automatic}, {Automatic, 56}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 521, 10, 28, "Input",ExpressionUUID->"3e99ca2a-899a-41b9-90a5-a52dc80df0b8"],
+Cell[1082, 32, 424, 9, 28, "Input",ExpressionUUID->"099633e4-ea79-4eda-996e-a03af2ad70c4"],
+Cell[1509, 43, 402, 9, 48, "Input",ExpressionUUID->"f85eb01f-f01c-4b0e-ba63-402c3c4f901a"],
+Cell[CellGroupData[{
+Cell[1936, 56, 1069, 32, 105, "Input",ExpressionUUID->"d3ee414f-db74-4056-9345-c355e6174640"],
+Cell[3008, 90, 545, 11, 24, "Message",ExpressionUUID->"49727d3c-3f50-4b2d-81ed-38331e5ff8e8"],
+Cell[3556, 103, 522, 12, 23, "Message",ExpressionUUID->"d80ccbab-f7a3-43f8-894f-b066e6464eac"],
+Cell[4081, 117, 155, 2, 32, "Output",ExpressionUUID->"9152cfbb-a6b1-4dda-b790-1b07c56e78f8"],
+Cell[4239, 121, 543, 11, 24, "Message",ExpressionUUID->"22fa53a7-b397-4986-b9ea-952bcb776f00"],
+Cell[4785, 134, 500, 11, 23, "Message",ExpressionUUID->"558e43f7-17a4-47f6-8dbd-53cfbdc6d04f"],
+Cell[5288, 147, 155, 2, 32, "Output",ExpressionUUID->"1fbb53e5-5a52-4492-8ff8-7c8860071e6f"],
+Cell[5446, 151, 545, 11, 24, "Message",ExpressionUUID->"c6cd9080-7dde-47a2-b772-4b4651eebe78"],
+Cell[5994, 164, 531, 12, 23, "Message",ExpressionUUID->"09ceabe7-a293-469d-9c21-56d356e5ea13"],
+Cell[6528, 178, 157, 2, 32, "Output",ExpressionUUID->"d0f20255-4be7-4c07-8617-33f6264c51b5"]
+}, Open  ]],
+Cell[6700, 183, 320, 7, 105, "Input",ExpressionUUID->"b41f34cf-c51e-409b-8573-08dcc14dc917"],
+Cell[7023, 192, 354, 6, 28, "Input",ExpressionUUID->"3ce6613b-0a2f-430e-93e5-44767981f7a0"],
+Cell[CellGroupData[{
+Cell[7402, 202, 405, 6, 28, "Input",ExpressionUUID->"16f0c784-f3e6-4ac2-bd43-073fec4cb5be"],
+Cell[7810, 210, 668, 14, 24, "Message",ExpressionUUID->"02a34320-931c-4df5-a4c6-50a6f41a4dc6"]
+}, Open  ]],
+Cell[8493, 227, 156, 3, 28, InheritFromParent,ExpressionUUID->"86470e1d-4860-4987-b4f3-227d8cb3d36b"],
+Cell[8652, 232, 154, 3, 28, InheritFromParent,ExpressionUUID->"59b90552-32fb-4201-a1fd-3f7c3a2e5bb6"]
+}
+]
+*)
+

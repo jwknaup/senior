@@ -1,0 +1,9 @@
+*.mp4
+*.MOV
+*.pptx
+IDEAlab/simulation/pullups/build/Mono
+IDEAlab/simulation/pullups/build/pullups_Data
+*.bin
+*.zip
+EGR401/Radar Flashdrive/Matlab_API_Explained/training_data
+EGR433/drone/cad/2
