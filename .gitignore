@@ -1,6 +1,15 @@
 *.mp4
 *.MOV
 *.pptx
+<<<<<<< HEAD
 IDEAlab\simulation\pullups\build\Mono
 IDEAlab\simulation\pullups\build\pullups_Data
 *.bin
+=======
+IDEAlab/simulation/pullups/build/Mono
+IDEAlab/simulation/pullups/build/pullups_Data
+*.bin
+*.zip
+EGR401/Radar Flashdrive/Matlab_API_Explained/training_data
+EGR433/drone/cad/2
+>>>>>>> adf5cc6... new

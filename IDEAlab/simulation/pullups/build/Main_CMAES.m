@@ -10,9 +10,15 @@ set_number = 1;
 
 %%%%%%%%%%%%%%%       Running Modified CMA-ES       %%%%%%%%%%%%%%%
 
+<<<<<<< HEAD
 load('Exper_Data4.mat')
 load('Exper_Data8.mat')
 load('Exper_Data12.mat')
+=======
+load('Exper_DataL4.mat')
+load('Exper_DataL8.mat')
+load('Exper_DataL12.mat')
+>>>>>>> adf5cc6... new
 % Exper_data = average(any(average,2),:);
 
 cmaes_Jacob

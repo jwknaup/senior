@@ -29,8 +29,13 @@ void setup() {
 //  }
 
   //set directions
+<<<<<<< HEAD
   digitalWrite(4,1);
   digitalWrite(6,1);
+=======
+  digitalWrite(4,0);
+  digitalWrite(6,0);
+>>>>>>> adf5cc6... new
   //set mode
   digitalWrite(3,1);
   
@@ -41,7 +46,11 @@ void setup() {
   int leftCount=0;
   int i=0;
 
+<<<<<<< HEAD
   delay(5000);
+=======
+  delay(5);
+>>>>>>> adf5cc6... new
 
   digitalWrite(5,1);
   digitalWrite(8,1);

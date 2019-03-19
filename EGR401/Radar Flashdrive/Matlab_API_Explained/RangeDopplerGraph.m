@@ -118,6 +118,13 @@ samp_rate =1/sweep_period*SPS;
 lightspeed = 3e8;
 
 rd_axes = axes;
+<<<<<<< HEAD
+=======
+jFrame = get(handle(gcf),'JavaFrame');
+
+FILTER_SIZE = 5;
+past_results = zeros(FILTER_SIZE, 1);
+>>>>>>> adf5cc6... new
 
 % Exmaple code structure:
 %
@@ -125,6 +132,10 @@ rd_axes = axes;
 %
 % while loop start 
 while(1)
+<<<<<<< HEAD
+=======
+    for channel = 1:2
+>>>>>>> adf5cc6... new
     
     % device interface
     % use miniradarpuetdata() to send an instruction to the
@@ -134,11 +145,20 @@ while(1)
     % use miniradargetdata() to request data from the device
     tic;
     [data,inlength] = miniradargetdata(handles.endpoint6_no,data_length);
+<<<<<<< HEAD
     toc;
+=======
+    %toc;
+>>>>>>> adf5cc6... new
     
     %% signal processing
     %strip off the excess leftover data we requested
     rawdata = double(data(2049:end));
+<<<<<<< HEAD
+=======
+%     Filename = sprintf('training_data/raw/datas_%s.mat', datestr(now,'HH-MM-SS'));
+%%     save(Filename,'rawdata');
+>>>>>>> adf5cc6... new
     % find data section start
     index = find(rawdata>=32768);
     % remove flag from data starts
@@ -146,12 +166,20 @@ while(1)
     %make sure we got valid amount of data
     if (length(rawdata) ~= data_length-2048)
         disp(length(data));    
+<<<<<<< HEAD
         break;
     end;
 
     % Iterate through the two channels
     for channel = 1:1
 
+=======
+        %break;
+    end
+
+    % Iterate through the two channels
+    
+>>>>>>> adf5cc6... new
         %% Prepare general signal processing
         channel_index = (channel - 1) * 2 + 1;
 
@@ -235,6 +263,7 @@ while(1)
         %surfX and surfY, and height (color) defined by range doppler data
         surface(surfX, surfY, final_range_doppler_data, 'EdgeColor', 'none');
         DopplerX = 10;
+<<<<<<< HEAD
         DopplerY = 20;
         axis([-DopplerX DopplerX 0 DopplerY]);
         xlabel('Velocity(m/s)');
@@ -248,13 +277,59 @@ while(1)
     % Display the figure
     drawnow limitrate;
     toc;
+=======
+        DopplerY = 50;
+        axis([-DopplerX DopplerX 0 DopplerY]);
+        xlabel('<--moving--towards--you--     Velocity(m/s)     --moving--away--from--you-->');
+        ylabel('Range(m)');
+        %toc;
+
+   
+
+    tic;
+    %% Display the figure
+    title('');
+    drawnow limitrate;
+%     Filename = sprintf('training_data/images/fig_%s.png', datestr(now,'HH-MM-SS'));
+%     saveas(rd_axes, Filename);
+    cdata = print('-RGBImage');
+    jFrame.setMaximized(true);
+    jFrame.setMaximized(false);
+    class = classify(net, cdata)
+    if class == categorical(1,1,'positive')
+        res = 1;
+    elseif class == categorical(1,1,'negative')
+        res = 0;
+    end
+    
+    for i = 1:FILTER_SIZE-1
+        past_results(i) = past_results(i+1);
+    end
+    past_results(FILTER_SIZE) = res
+    
+    if mean(past_results) > 0.75 %add GUI adjustment on figure
+        title("Person");
+    else
+        title('No Person');
+    end
+    drawnow limitrate;
+    %toc;
+>>>>>>> adf5cc6... new
 
     % Check if the user want's to quit
     if isvalid(rd_axes) == 0
         return;
+<<<<<<< HEAD
     end;
 
 % while loop end
 end;
+=======
+    end
+ % End Channel Iteration    
+    end
+% while loop end
+    end
+>>>>>>> adf5cc6... new
 
 %near and far, static and moving, which waveform, then deep learning

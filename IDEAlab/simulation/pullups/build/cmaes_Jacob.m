@@ -10,15 +10,24 @@ global in_history out_history set_number fname %cal_fx cal_fy cal_fz cal_mx cal_
 CostFunction=@MyCost;   % Cost Function
 in111 = in_history;
 out111 = out_history;
+<<<<<<< HEAD
 nVar=12;                % Number of Unknown (Decision) Variables
+=======
+nVar=1;                % Number of Unknown (Decision) Variables
+>>>>>>> adf5cc6... new
 
 VarSize=[1 nVar];       % Decision Variables Matrix Size
 
 
 %-- Uniform Variables
 
+<<<<<<< HEAD
 VarMin = [ 0 0 0 0 0 0 0 0 0 0 0 0];             % Lower Bound of Decision Variables
 VarMax = [ 100 100 1000000 100000 10000 1000 100 1000000 100000 100 1000000 100000];             % Upper Bound of Decision Variables
+=======
+VarMin = [ 0 ];             % Lower Bound of Decision Variables
+VarMax = [ 100000 ];             % Upper Bound of Decision Variables
+>>>>>>> adf5cc6... new
 
 
 %% CMA-ES Settings

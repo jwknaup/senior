@@ -67,6 +67,10 @@
     <Compile Include="Assets\Main.cs" />
     <Compile Include="Assets\PlayerControl.cs" />
     <Compile Include="Assets\Scenes\ApplyForce.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="Assets\Scenes\PrintPos.cs" />
+>>>>>>> adf5cc6... new
     <Compile Include="Assets\Simulation.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Jacob/Documents/Senior/IDEAlab/simulation/pullups/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

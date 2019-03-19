@@ -20,7 +20,11 @@ public class LegInverted
     public float joint_spring, joint_damper, flex_damper, translational_drag, angular_drag;
     public float maxTorque, maxRpm, gear_ratio;
 
+<<<<<<< HEAD
     public void createLeg()
+=======
+    public void createLeg(bool contact)
+>>>>>>> adf5cc6... new
     {
         //******Transforms******
 
@@ -44,12 +48,28 @@ public class LegInverted
         calfL.transform.localEulerAngles = new Vector3(calf_angle, 0, 0);
         calfL.transform.localScale = new Vector3(global_width, global_thickness, calf_length);
         calfL.layer = 9;
+<<<<<<< HEAD
+=======
+        BoxCollider ms = calfL.GetComponent<BoxCollider>();
+        ms.material = new PhysicMaterial();
+        ms.material.dynamicFriction = 999;
+        ms.material.staticFriction = 999;
+        ms.material.bounciness = 0;
+>>>>>>> adf5cc6... new
 
         calfR = GameObject.CreatePrimitive(PrimitiveType.Cube);
         calfR.transform.position = new Vector3(0, -.5F * calf_length * Simulation.sine(calf_angle), .5F * calf_length * Simulation.cosine(calf_angle));
         calfR.transform.localEulerAngles = new Vector3(-calf_angle, 0, 0);
         calfR.transform.localScale = new Vector3(global_width, global_thickness, calf_length);
         calfR.layer = 9;
+<<<<<<< HEAD
+=======
+        ms = calfR.GetComponent<BoxCollider>();
+        ms.material = new PhysicMaterial();
+        ms.material.dynamicFriction = 999;
+        ms.material.staticFriction = 999;
+        ms.material.bounciness = 0;
+>>>>>>> adf5cc6... new
 
         top = Simulation.createBlock(new Vector3(0, thigh_length * Simulation.sine(thigh_angle), 0), new Vector3(0, 0, 0), new Vector3(global_width, spring_length, 2 * spring_length), 9);
 
@@ -169,6 +189,7 @@ public class LegInverted
         hj.spring = js;
         hj.useSpring = true;
 
+<<<<<<< HEAD
         hj = Simulation.addJoint(ground, calfLBody, new Vector3(0, 0, 0));
         ground.GetComponent<Rigidbody>().isKinematic = true;
 
@@ -178,6 +199,20 @@ public class LegInverted
         thighRbBody.maxAngularVelocity = 1000;
         calfLBody.maxAngularVelocity = 1000;
         calfRBody.maxAngularVelocity = 1000;
+=======
+        if (!contact)
+        {
+            hj = Simulation.addJoint(ground, calfLBody, new Vector3(0, 0, 0));
+            ground.GetComponent<Rigidbody>().isKinematic = true;
+        }
+
+        thighLaBody.maxAngularVelocity = 10000;
+        thighRaBody.maxAngularVelocity = 10000;
+        thighLbBody.maxAngularVelocity = 10000;
+        thighRbBody.maxAngularVelocity = 10000;
+        calfLBody.maxAngularVelocity = 10000;
+        calfRBody.maxAngularVelocity = 10000;
+>>>>>>> adf5cc6... new
     }
 
     public void createGround()
@@ -185,6 +220,7 @@ public class LegInverted
         ground = GameObject.CreatePrimitive(PrimitiveType.Plane);
         ground.transform.position = new Vector3(0, -drop_height - calf_length * Simulation.sine(calf_angle), 0);
         ground.transform.localScale = new Vector3(10F, 1F, 10F);
+<<<<<<< HEAD
     }
 
     public void setDimensions(float length, float width, float thickness)
@@ -212,6 +248,46 @@ public class LegInverted
         massScaleFactor = 10;
         forceScaleFactor = massScaleFactor * lengthScaleFactor;
         torqueScaleFactor = forceScaleFactor * lengthScaleFactor;
+=======
+
+        MeshRenderer rend = ground.GetComponent<MeshRenderer>();
+        rend.material.color = Color.black;
+
+        MeshCollider ms = ground.GetComponent<MeshCollider>();
+        ms.material = new PhysicMaterial();
+        ms.material.dynamicFriction = 999;
+        ms.material.staticFriction = 999;
+        ms.material.bounciness = 0;
+    }
+
+    public void setDimensions(float length, float width, float thickness, float startAngle)
+    {
+        thigh_length = length*lengthScaleFactor;
+        calf_length = thigh_length;
+        global_width = width*lengthScaleFactor;
+        global_thickness = thickness*lengthScaleFactor;
+
+        drop_height = .001F*lengthScaleFactor;
+        thigh_angle = startAngle;
+        calf_angle = Mathf.Acos(thigh_length * Simulation.cosine(thigh_angle) / calf_length) * Mathf.Rad2Deg;
+
+        spring_length = 0.01F*lengthScaleFactor;
+
+    }
+
+    public void setPhysConstants(float lsf, float msf, float gravityDirection)
+    {
+        lengthScaleFactor = lsf;
+        massScaleFactor = msf;
+        forceScaleFactor = massScaleFactor * lengthScaleFactor;
+        torqueScaleFactor = forceScaleFactor * lengthScaleFactor;
+
+        Time.fixedDeltaTime = 0.001f;
+        Time.maximumDeltaTime = 6.0f;
+        Time.captureFramerate = (int)(1 / Time.fixedDeltaTime);
+        Physics.defaultSolverIterations = 60;
+        Physics.gravity = new Vector3(0, 9.81f * lengthScaleFactor * gravityDirection, 0);
+>>>>>>> adf5cc6... new
     }
 
     public void setSpringConstants(float rigidSpring, float rigidDamper, float jointSpring, float jointDamper)
@@ -227,6 +303,7 @@ public class LegInverted
         angular_drag = angularDrag;
     }
 
+<<<<<<< HEAD
     public void setMasses(float topMass, float linearDensity)
     {
         top_mass = topMass;// 0.72f;
@@ -238,6 +315,54 @@ public class LegInverted
         gear_ratio = gearRatio;
         maxTorque = 0.1554f / 75.0f * gear_ratio * 100000f;
         maxRpm = 400.0f * 75.0f / gear_ratio;
+=======
+    public void setMasses(float topMass, float fiberglassDensity)
+    {
+        segment_mass = fiberglassDensity * massScaleFactor * thigh_length / lengthScaleFactor * global_thickness/lengthScaleFactor * global_width/lengthScaleFactor;//0.095f
+        top_mass = topMass*massScaleFactor;// 0.72f;
+    }
+
+    public void setMotorConstants(float gearRatio, int direction)
+    {
+        gear_ratio = gearRatio;
+        maxTorque = 0.1554f / 75.0f * gear_ratio * torqueScaleFactor;
+        maxRpm = 400.0f * 75.0f / gear_ratio;
+        if(gearRatio == 50)
+        {
+            maxTorque = .066f;
+            maxRpm = 650;
+        } else if(gearRatio == 75)
+        {
+            maxTorque = .098f;
+            maxRpm = 450;
+        } else if(gearRatio == 100)
+        {
+            maxTorque = .13f;
+            maxRpm = 330;
+        } else if(gearRatio == 150)
+        {
+            maxTorque = 0.18f;
+            maxRpm = 220;
+        } else if(gearRatio == 210)
+        {
+            maxTorque = 0.25f;
+            maxRpm = 160;
+        } else if(gearRatio == 250)
+        {
+            maxTorque = 0.30f;
+            maxRpm = 130;
+        } else if(gearRatio == 298)
+        {
+            maxTorque = 0.33f;
+            maxRpm = 110;
+        } else if(gearRatio == 1000)
+        {
+            maxTorque = 1.0f;
+            maxRpm = 35;
+        }
+
+        maxRpm *= direction;
+>>>>>>> adf5cc6... new
     }
 
 }
